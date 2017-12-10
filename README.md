@@ -19,6 +19,9 @@ Variation of GPU time rendering of 3D canvas allows to generate un  ique token f
 Also, this approach was widely used for deanonymization of Tor's user, in force of this fact, Tor's developers made 
 a patch for this exploit, for now, Tor notifies user of canvas read attempt and return blank image data.
 
+Docker hub attempted to fetch canvas fingerprint, but was locked by add-on:
+![Attempt](https://github.com/arukavytsia/canvas-fingerprinting/raw/master/images/2.png "Attempt to fetch fingerprint")
+
 ## How to protect yourself from it?
 
 A lot of add-ons allow you to prevent attempt to fetch canvas fingerprint like 
