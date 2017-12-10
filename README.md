@@ -55,4 +55,4 @@ After collection all metadata in a single place, they are joined with
 of your browser.
     
 
-**License: MIT**
+## **License: MIT**
