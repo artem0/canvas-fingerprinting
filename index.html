@@ -5,14 +5,20 @@
   <script src="fingerprint.js"></script>
 </head>
 <body>
-  <div style="text-align: center;">
-    <h3 style="margin-top: 60px">Canvas Fingerprint</h3>
-    <h1 id="canvasFingerprint"></h1>
-  </div>
+<div style="text-align: center;">
+  <h3 style="margin-top: 60px">Fingerprint with drawing canvas</h3>
+  <h1 id="withCanvasDrawing"></h1>
+</div>
+<div style="text-align: center;">
+  <h3 style="margin-top: 20px">Fingerprint without drawing canvas, metadata only:</h3>
+  <h1 id="withoutCanvasDrawing"></h1>
+</div>
 
-  <script>
-      var withCanvasDrawing = new Fingerprint();
-      document.getElementById('canvasFingerprint').innerHTML = withCanvasDrawing.get();
-  </script>
+<script>
+    var withCanvasDrawing = new Fingerprint({canvas: true});
+    var withoutCanvasDrawing = new Fingerprint({canvas: false});
+    document.getElementById('withCanvasDrawing').innerHTML = withCanvasDrawing.get();
+    document.getElementById('withoutCanvasDrawing').innerHTML = withoutCanvasDrawing.get();
+</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-# Implementing Canvas fingerprinting from scratch
+# Canvas fingerprinting from scratch
 
 ## What is it?
 
@@ -44,7 +44,7 @@ This library uses multiple sources for generating unique token:
     - local storage
     - indexed DB
     - open DB
-    - IE 'AddBehaviour'
+    - IE `AddBehaviour`
     - IE specific plugins like `RealPlayer`, `AcroPDF`, `AgControl.AgControl - for Silverlight` etc.
     - [DNT header](https://en.wikipedia.org/wiki/Do_Not_Track) - as ironic as it was
 
