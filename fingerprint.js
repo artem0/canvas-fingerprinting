@@ -69,7 +69,11 @@
       if(this.canvas && this.isCanvasSupported()){
         keys.push(this.getCanvasFingerprint());
       }
-      return this.murmurhash3_32_gc(keys.join('###'), 31);
+      if(this.hasher){
+        return this.hasher(keys.join('###'), 31);
+      } else {
+        return this.murmurhash3_32_gc(keys.join('###'), 31);
+      }
     },
 
     murmurhash3_32_gc: function(key, seed) {

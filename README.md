@@ -69,5 +69,23 @@ After collection all metadata in a single place, they are joined with
 [MurmurHash](https://en.wikipedia.org/wiki/MurmurHash), in result, you have integer value which represents fingerprint
 of your browser.
     
+## Library usage:
+
+```javascript
+var fingerprint = new Fingerprint();
+```
+
+If you want to control drawing flag, just pass it directly `canvas: true` 
+```javascript
+    var withCanvasDrawing = new Fingerprint({canvas: true});
+    var withoutCanvasDrawing = new Fingerprint({canvas: false});
+```
+
+### Using custom hashing function
+
+```javascript
+    var withCanvasDrawing = new Fingerprint({hasher: pearson});
+   
+```
 
 ## **License: MIT**
