@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Fingerprinting Demo</title>
+  <script src="fingerprint.js"></script>
+</head>
+<body>
+  <div style="text-align: center;">
+    <h3 style="margin-top: 60px">Canvas Fingerprint</h3>
+    <h1 id="canvasFingerprint"></h1>
+  </div>
+
+  <script>
+      var withCanvasDrawing = new Fingerprint();
+      document.getElementById('canvasFingerprint').innerHTML = withCanvasDrawing.get();
+  </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Implementing Canvas fingerprinting from scratch
 
-##What is it?
+## What is it?
 
 Native JS library for fetching canvas fingerprinting  
 
@@ -9,15 +9,13 @@ Native JS library for fetching canvas fingerprinting
 Canvas fingerprinting is a techniques of tracking online users that allow websites to identify and track visitors using 
 HTML5 canvas element instead of browser cookies or other similar means.
 
-## What is it for?
-
 Main responsibility of canvas fingerprinting is collecting information about a remote computing device for the purpose 
 of identification. Even if you are browsing GitHub now, this site try to fetch as much as possible your metadata like 
 fonts, OS, specific system properties and it tries to draw hidden 3D [canvas](https://en.wikipedia.org/wiki/Canvas_element) 
 which will be converted in unique token for  further identification on another sites, advertising some bullshit goods
 on e-commerce sites or for recommendation system in social network.
 
-Variation of GPU time rendering of 3D canvas allows to generate unique token for each user.
+Variation of GPU time rendering of 3D canvas allows to generate un  ique token for each user.
 Also, this approach was widely used for deanonymization of Tor's user, in force of this fact, Tor's developers made 
 a patch for this exploit, for now, Tor notifies user of canvas read attempt and return blank image data.
 
