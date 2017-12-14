@@ -1,13 +1,13 @@
-# Canvas fingerprinting from scratch
+## Canvas fingerprinting from scratch
 
 ## What is it?
 
-Native JS library for fetching canvas fingerprinting  
+Native JS library for fetching canvas fingerprinting.
 
 ## What is canvas fingerprinting?
 
 Canvas fingerprinting is a techniques of tracking online users that allow websites to identify and track visitors using 
-HTML5 canvas element instead of browser cookies or other similar means.
+HTML5 canvas element instead of browser cookies or other similar means. Consider it like a `cookie on steroids`.
 
 Main responsibility of canvas fingerprinting is collecting information about a remote computing device for the purpose 
 of identification. Even if you are browsing GitHub now, this site try to fetch as much as possible your metadata like 
@@ -25,7 +25,10 @@ A lot of add-ons allow you to prevent attempt to fetch canvas fingerprint like
 [Privacy Badger](https://en.wikipedia.org/wiki/Privacy_Badger) 
 or [Canvas Defender](https://chrome.google.com/webstore/detail/canvas-defender/obdbgnebcljmgkoljcdddaopadkifnpm?hl=en),
 as mentioned above, Tor browser protect users from it by default. From October of 2017 Firefox [prevents canvas
-fingerprinting](https://thehackernews.com/2017/10/canvas-browser-fingerprint-blocker.html) by default.
+fingerprinting](https://thehackernews.com/2017/10/canvas-browser-fingerprint-blocker.html) by default,
+Firefox [takes a bite out of the canvas](https://nakedsecurity.sophos.com/2017/10/30/firefox-takes-a-bite-out-of-the-canvas-super-cookie/) while other browsers don't prevent it.
+
+![Firefox](https://github.com/arukavytsia/canvas-fingerprinting/raw/master/images/0.png "Firefox")
 
 ## Examples:
 [Docker hub](https://hub.docker.com/) attempted to fetch canvas fingerprint, but was locked by add-on:
@@ -103,6 +106,7 @@ from `java.lang.String`:
             }
             return hash;
         };
+
     var fingerprint = new Fingerprint({hasher: javaHashCode});
    
 ```
