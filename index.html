@@ -1,17 +1,21 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <title>Canvas Fingerprinting Demo</title>
-  <script src="fingerprint.js"></script>
+    <title>Canvas Fingerprinting Demo</title>
+    <script src="fingerprint.js"></script>
 </head>
 <body>
 <div style="text-align: center;">
-  <h3 style="margin-top: 60px">Fingerprint with drawing canvas</h3>
-  <h1 id="withCanvasDrawing"></h1>
+    <h3 style="margin-top: 60px">Fingerprint with drawing canvas</h3>
+    <h1 id="withCanvasDrawing"></h1>
 </div>
 <div style="text-align: center;">
-  <h3 style="margin-top: 20px">Fingerprint without drawing canvas, metadata only:</h3>
-  <h1 id="withoutCanvasDrawing"></h1>
+    <h3 style="margin-top: 20px">Fingerprint without drawing canvas, metadata only:</h3>
+    <h1 id="withoutCanvasDrawing"></h1>
+</div>
+
+<div style="text-align: center;">
+    <h3 style="margin-top: 20px">Fingerprint without drawing canvas, metadata only:</h3>
+    <h1 id="FingerPrintWithJavaHashCode"></h1>
 </div>
 
 <script>
@@ -19,6 +23,23 @@
     var withoutCanvasDrawing = new Fingerprint({canvas: false});
     document.getElementById('withCanvasDrawing').innerHTML = withCanvasDrawing.get();
     document.getElementById('withoutCanvasDrawing').innerHTML = withoutCanvasDrawing.get();
+
+    var javaHashCode = function(string, K) {
+        var hash = 0;
+        if (string.length === 0) {
+            return hash;
+        }
+        for (var i = 0; i < string.length; i++) {
+            char = string.charCodeAt(i);
+            hash = K*((hash<<5)-hash)+char;
+            hash = hash & hash;
+        }
+        return hash;
+    };
+
+    var javaHashFunction = new Fingerprint({hasher: javaHashCode});
+    document.getElementById('FingerPrintWithJavaHashCode').innerHTML = javaHashFunction.get();
+
 </script>
 </body>
 </html>

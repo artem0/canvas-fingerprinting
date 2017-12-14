@@ -72,7 +72,7 @@ of your browser.
 ## Library usage:
 
 ```javascript
-var fingerprint = new Fingerprint();
+    var fingerprint = new Fingerprint();
 ```
 
 If you want to control drawing flag, just pass it directly `canvas: true` 
@@ -85,6 +85,25 @@ If you want to control drawing flag, just pass it directly `canvas: true`
 
 ```javascript
     var withCanvasDrawing = new Fingerprint({hasher: pearson});
+   
+```
+
+Example with Java's [hashcode](https://en.wikipedia.org/wiki/Java_hashCode())
+from `java.lang.String`:
+```javascript
+    var javaHashCode = function(string, K) {
+            var hash = 0;
+            if (string.length === 0) {
+                return hash;
+            }
+            for (var i = 0; i < string.length; i++) {
+                char = string.charCodeAt(i);
+                hash = K*((hash<<5)-hash)+char;
+                hash = hash & hash;
+            }
+            return hash;
+        };
+    var fingerprint = new Fingerprint({hasher: javaHashCode});
    
 ```
 
